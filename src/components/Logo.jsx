@@ -7,7 +7,7 @@ const Logo = () => {
   useEffect(() => {
     // Delay 4.5 seconds rakha hai taake red screen hatne k baad logo show ho (Hero sync)
     gsap.to(logoRef.current, {
-      scale: 0.8,
+      
       x: 0,
       y: 0,
       xPercent: 0,
@@ -25,7 +25,7 @@ const Logo = () => {
       src="/images/logo-light-1.svg"
       alt="Toyota"
       // fixed aur z-[999] isko hamesha screen par start se end tak aik jagah rakhe ga
-      className="fixed top-6 opacity-60 scale-80 left-2 z-[999] w-32 pointer-events-none transform-gpu"
+      className="fixed top-6 left-6  scale-100  z-[999] w-32 pointer-events-none transform-gpu"
       style={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0 100%)"  }}
     />
   );

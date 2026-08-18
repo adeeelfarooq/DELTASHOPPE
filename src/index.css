@@ -18,3 +18,9 @@ body::-webkit-scrollbar {
   display: none; /* Chrome, Safari */
   
 }
+
+* {
+  /* Fonts ko blur/flicker hone se roke ga animations k doran */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
