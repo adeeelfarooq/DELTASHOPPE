@@ -33,7 +33,7 @@ const IntroScreen = () => {
   return (
     <div 
       ref={introRef} 
-      className="fixed inset-0 z-[100] bg-[#ba1c3c] flex items-center justify-center transform-gpu"
+      className="fixed inset-0 z-[100] bg-[#0e0d0d] flex items-center justify-center transform-gpu"
     >
       <img 
         ref={introLogoRef} 
