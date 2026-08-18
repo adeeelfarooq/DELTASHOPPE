@@ -23,6 +23,18 @@ export const carouselSlides = [
     subtitle: "What we provide",
     bgImage: "/images/blocks.png", 
     btnText: "VIEW",
+  },
+  {
+    id: 4,
+    type: "achievements", 
+    title: "OUR ACHIEVEMENTS",
+    subtitle: "By The Numbers",
+    stats: [
+      { value: "100M+", label: "REVENUE GENERATED" },
+      { value: "1,000+", label: "PROJECTS COMPLETED" },
+      { value: "25+", label: "IN-HOUSE DEVELOPERS" },
+      { value: "98.8%", label: "CLIENT SATISFACTION" }
+    ]
   }
 ];
 
