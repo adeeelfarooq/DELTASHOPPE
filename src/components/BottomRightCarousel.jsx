@@ -85,7 +85,14 @@ const BottomRightCarousel = ({ slides, onOpenModal }) => {
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
           >
             {slides.map((slide, index) => (
-              <div key={slide.id} className="relative w-full h-full shrink-0 overflow-hidden cursor-pointer">
+              <div 
+                key={slide.id} 
+                className="relative w-full h-full shrink-0 overflow-hidden cursor-pointer"
+                onClick={() => {
+                  if (slide.type === "profile") setPdfUrl(slide.btnLink);
+                  if (slide.type === "services") onOpenModal();
+                }}
+              >
                 
                 {/* 🟦 SLIDE 1 (Profile) & SLIDE 3 (Services) */}
                 {(slide.type === "profile" || slide.type === "services") && (
@@ -99,10 +106,7 @@ const BottomRightCarousel = ({ slides, onOpenModal }) => {
                       <span className="text-[10px] font-bold text-white font-paragraph tracking-widest uppercase">{slide.subtitle}</span>
                     </div>
                     
-                    <div 
-                      className="absolute bottom-4 right-4 z-10 bg-[#ba1c3c] text-white text-[8px] px-3 py-2 rounded-full font-bold tracking-[0.1rem] transition-colors uppercase group/btn cursor-pointer" 
-                      onClick={() => slide.type === "profile" ? setPdfUrl(slide.btnLink) : onOpenModal()}
-                    >
+                    <div className="absolute bottom-4 right-4 z-10 bg-[#ba1c3c] text-white text-[8px] px-3 py-2 rounded-full font-bold tracking-[0.1rem] transition-colors uppercase group/btn cursor-pointer">
                       <span className="flex items-center overflow-hidden leading-none h-[1em]" >
                         {slide.btnText.split("").map((char, charIdx) => (
                           <span key={charIdx} className="relative inline-flex h-[1em] overflow-hidden">
@@ -182,32 +186,52 @@ const BottomRightCarousel = ({ slides, onOpenModal }) => {
             onClick={() => setPdfUrl(null)}
           ></div>
 
-          {/* Premium Dark Container with Red Glow */}
-          <div className="relative w-full h-[90vh] max-w-5xl bg-[#0a0a0a]/95 backdrop-blur-3xl border border-white/10 rounded-3xl shadow-[0_0_60px_-15px_rgba(186,28,60,0.3)] overflow-hidden flex flex-col transform-gpu">
+          {/* Premium Dark Container with Red Glow (Max-width changed to 4xl for document proportion) */}
+          <div className="relative w-[95vw] max-w-4xl h-[90vh] bg-[#0a0a0a]/95 backdrop-blur-3xl border border-white/10 rounded-3xl shadow-[0_0_60px_-15px_rgba(186,28,60,0.3)] overflow-hidden flex flex-col transform-gpu">
             
             {/* Sleek Header */}
-            <div className="flex justify-between items-start p-5 md:px-8 md:py-6 border-b border-white/5 shrink-0">
+            <div className="flex justify-between items-center p-5 md:px-8 md:py-6 border-b border-white/5 shrink-0">
               <div>
                 <h2 className="text-[#ba1c3c] text-2xl md:text-3xl font-black uppercase leading-none mb-1.5">
                   Company Profile
                 </h2>
-                <p className="text-white text-[10px] md:text-xs font-bold font-paragraph  uppercase">
+                <p className="text-white text-[10px] md:text-xs font-bold font-paragraph uppercase">
                   Official DeltaShoppe Document
                 </p>
               </div>
-              <button 
-                onClick={() => setPdfUrl(null)}
-                className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/5 border border-white/10 hover:border-transparent hover:bg-[#ba1c3c] text-white flex items-center justify-center transition-all duration-300 cursor-pointer hover:rotate-90"
-              >
-                ✕
-              </button>
+              <div className="flex items-center gap-2">
+                {/* 🔴 Download Icon Button (Border & BG removed, Navbar Slide Animation kept) */}
+                <a 
+                  href={pdfUrl} 
+                  download="DeltaShoppe_Profile.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-transparent text-white flex items-center justify-center transition-all cursor-pointer group relative overflow-hidden shrink-0"
+                >
+                  <span className="absolute inset-0 bg-[#ba1c3c] transform origin-top scale-y-0 transition-transform duration-300 ease-out group-hover:scale-y-100 -z-10"></span>
+                  <span className="relative z-10 flex items-center justify-center">
+                    <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                    </svg>
+                  </span>
+                </a>
+                
+                {/* 🔴 Close Button (Border & BG removed, Navbar Slide Animation kept) */}
+                <button 
+                  onClick={() => setPdfUrl(null)}
+                  className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-transparent text-white flex items-center justify-center transition-all cursor-pointer group relative overflow-hidden shrink-0"
+                >
+                  <span className="absolute inset-0 bg-[#ba1c3c] transform origin-top scale-y-0 transition-transform duration-300 ease-out group-hover:scale-y-100 -z-10"></span>
+                  <span className="relative z-10 text-lg leading-none">✕</span>
+                </button>
+              </div>
             </div>
             
             {/* Framed Iframe Area */}
-            <div className="w-full flex-1 p-2 md:p-6 bg-black/40">
+            <div className="w-full flex-1 p-2 bg-black/40">
               <div className="w-full h-full rounded-xl md:rounded-2xl overflow-hidden border border-white/5 shadow-inner bg-[#1a1a1a]">
                 <iframe 
-                  src={pdfUrl} 
+                  src={`${pdfUrl}#toolbar=0&navpanes=0&view=FitH`} 
                   className="w-full h-full border-none"
                   title="DeltaShoppe Official PDF"
                 />

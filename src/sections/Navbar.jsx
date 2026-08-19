@@ -81,7 +81,7 @@ const Navbar = () => {
           </button>
           <button className="h-12 px-6 rounded-full bg-transparent backdrop-blur-md text-white font-black text-xs tracking-widest hover:text-white transition-all cursor-pointer group relative overflow-hidden">
             <span className="absolute inset-0 bg-[#ba1c3c] transform origin-top scale-y-0 transition-transform duration-300 ease-out group-hover:scale-y-100 -z-10"></span>
-            <span className="relative z-10">TL;DR</span>
+            <span className="relative z-10">WHY US</span>
           </button>
           <button className="h-12 px-6 rounded-full bg-transparent backdrop-blur-md text-white font-black text-xs tracking-widest hover:text-white transition-all cursor-pointer group relative overflow-hidden">
             <span className="absolute inset-0 bg-[#ba1c3c] transform origin-top scale-y-0 transition-transform duration-300 ease-out group-hover:scale-y-100 -z-10"></span>

@@ -21,10 +21,10 @@ const IntroScreen = () => {
           ease: "power3.out" 
         }
       )
-      .to({}, { duration: 1 })
+      
       .to(introRef.current, { 
         yPercent: -100, 
-        duration: 1.4, 
+        duration: 1, 
         ease: "power4.inOut" 
       });
 

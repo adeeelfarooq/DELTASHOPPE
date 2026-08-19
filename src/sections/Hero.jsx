@@ -73,7 +73,9 @@ const HeroTemplate = () => {
                            Agency
                        </h1>
                    </div>
+                   
                </div>
+               
 
                {/* Center Image: 100% exact proportional scaling based on screenshot */}
                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-auto z-10 flex items-center justify-center">
@@ -87,7 +89,7 @@ const HeroTemplate = () => {
                {/* Right Side: Absolute Paragraph */}
                <div className="flex items-stretch gap-[clamp(0.5rem,1vw,1.2rem)] pointer-events-auto z-20 w-[clamp(15rem,22vw,26rem)]">
                    <div className="w-[clamp(3px,0.25vw,5px)] bg-[#ba1c3c] shrink-0"></div>
-                   <p className="text-white text-[clamp(0.75rem,0.95vw,1.1rem)] font-paragraph leading-[1.7] text-left font-medium py-[0.5vw]">
+                   <p className="text-white text-[clamp(0.75rem,0.95vw,0.3rem)] font-paragraph leading-[1.7] text-left font-medium py-[0.5vw]">
                        Deltashoppe is a focused, no-fluff agency primed to transform your business operations by solving your most difficult problems with the latest technologies. If you want a team who is big on delivery, you have come to the right place.
                    </p>
                </div>
@@ -96,7 +98,11 @@ const HeroTemplate = () => {
           </div>
 
           {/* 🔲 UI ELEMENTS OVERLAY */}
-          <div className="absolute inset-0 pointer-events-none">
+          {/* 🔴 Added transform to perfectly slide it to the screen's right edge WITHOUT changing its width/size */}
+          <div 
+            className="absolute inset-0 pointer-events-none"
+            style={{ transform: "translateX(calc(50vw - 50%))" }}
+          >
               
               {/* RIGHT EDGE LINE */}
               <div className="absolute right-0 top-0 bottom-0 flex flex-col pointer-events-none z-20">
