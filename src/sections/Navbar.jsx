@@ -1,16 +1,30 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import Logo from "../components/Logo";
+import gsap from "gsap";
 
 const Navbar = () => {
+  const leftNavRef = useRef(null);
+  const rightNavRef = useRef(null);
+
+  useEffect(() => {
+    // 🔴 Intro screen ke 4.5s khatam hone ke baad Navbar ke elements fade-in honge
+    gsap.fromTo(
+      [leftNavRef.current, rightNavRef.current],
+      { opacity: 0 },
+      { opacity: 1, duration: 1, delay: 4.5, ease: "power2.inOut" }
+    );
+  }, []);
+
   return (
     // z-[100] aur pointer-events-none ensures k ye baqi layout ko block na kare
     <nav className="fixed inset-0 pointer-events-none z-[100]">
       
-      {/* 🟢 LOGO COMPONENT */}
+      {/* 🟢 LOGO COMPONENT (Isme apna 4.5s ka delay already hai) */}
       <Logo />
 
       {/* 1️⃣ LEFT EDGE MODULE (SOCIALS) - Exactly screen k left par */}
-      <div className="absolute left-5 top-0 bottom-0 flex flex-col items-center justify-center pointer-events-none">
+      {/* Initial opacity-0 rakhi hai taa ke jab tak GSAP na chalay, ye hidden rahay */}
+      <div ref={leftNavRef} className="absolute left-5 top-0 bottom-0 flex flex-col items-center justify-center pointer-events-none opacity-0">
         <div className="w-[1px] flex-1 bg-transparent to-[#eb0a1e]/60 mb-2"></div>
         <div className="relative flex flex-col gap-5 items-center w-12 py-5 bg-transparent rounded-full pointer-events-auto shadow-2xl">
           
@@ -58,7 +72,8 @@ const Navbar = () => {
       </div>
 
       {/* 2️⃣ TOP RIGHT MODULE - Exactly screen k right par */}
-      <div className="absolute top-6 right-6 flex flex-col items-end gap-3 pointer-events-none">
+      {/* Initial opacity-0 rakhi hai taa ke Intro Screen ke baad fade in ho */}
+      <div ref={rightNavRef} className="absolute top-6 right-6 flex flex-col items-end gap-3 pointer-events-none opacity-0">
         <div className="flex pointer-events-auto">
           <button className="h-12 px-6 rounded-full bg-transparent backdrop-blur-md text-white font-black text-xs tracking-widest hover:text-white transition-all cursor-pointer group relative overflow-hidden">
             <span className="absolute inset-0 bg-[#ba1c3c] transform origin-top scale-y-0 transition-transform duration-300 ease-out group-hover:scale-y-100 -z-10"></span>
