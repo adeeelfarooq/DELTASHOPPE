@@ -1,15 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { carouselSlides, servicesList } from "../constants"; 
 import BottomRightCarousel from "../components/BottomRightCarousel"; 
 import ServicesModal from "../components/ServicesModal"; 
 import PageContainer from "../components/PageContainer"; 
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const HeroTemplate = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const heroRef = useRef(null);
+
+  // 🟢 GSAP PIN LOGIC FOR STACKING EFFECT
+  useGSAP(() => {
+    ScrollTrigger.create({
+      trigger: heroRef.current,
+      start: "top top",
+      // Jab tak agla section poora upar na aa jaye, ye pin rahega
+      end: "bottom top", 
+      pin: true,
+      pinSpacing: false, // 🚀 MAGIC KEY: Ye agle section ko iske upar slide hone dega
+    });
+  });
 
   return (
     <>
-      <section className="relative h-screen w-screen overflow-hidden bg-black flex items-center justify-center py-4 lg:py-6">
+      <section ref={heroRef} className="relative h-screen w-screen overflow-hidden bg-black flex items-center justify-center py-4 lg:py-6">
         
         {/* Background Overlay */}
         {/* <div className="absolute inset-0 bg-black/50 z-0"></div> */}

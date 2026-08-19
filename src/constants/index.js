@@ -6,7 +6,8 @@ export const carouselSlides = [
     subtitle: "View Official PDF",
     bgImage: "/images/logo-light-1.svg",
     btnText: "VIEW",
-    btnLink: "https://www.scribd.com/document/703712535/DeltaShoppe-OfficialCompanyProfile",
+    // 🟢 External link hata kar aapke public folder wale PDF ka path laga diya hai
+    btnLink: "/pdf/DeltaShoppe-OfficialCompanyProfile.pdf", 
   },
   {
     id: 2,
@@ -48,4 +49,19 @@ export const servicesList = [
   { name: "Internet of Things", icon: "/images/icons/iot.png" },
   { name: "Content & Copywriting", icon: "/images/icons/content-writing.png" },
   { name: "Technical Writing", icon: "/images/icons/writing.png" }
+];
+
+export const principles = [
+  {
+    title: "Development",
+    text: "Through latest technologies and an agile environment, our development process ensures your solution meets the quality standards."
+  },
+  {
+    title: "Diligence",
+    text: "Through our diligent practices, your objectives are met with perfectly designed solutions that follow all the proper patterns and conventions."
+  },
+  {
+    title: "Dedication",
+    text: "Whatever your goals are, our dedicated and experienced team have got it covered. They will pull out all the stops to meet your expectations."
+  }
 ];
