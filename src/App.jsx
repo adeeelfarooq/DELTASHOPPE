@@ -1,15 +1,16 @@
 import React from 'react'
 
 import IntroScreen from './components/IntroScreen'
-import Logo from './components/Logo'
+
 import HeroTemplate from './sections/Hero'
+import Navbar from './sections/Navbar'
 
 
 const App = () => {
   return (
     <div>
       <IntroScreen/>
-      <Logo/>
+      <Navbar/>
       <HeroTemplate/>
     </div>
   )
