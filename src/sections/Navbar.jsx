@@ -4,12 +4,12 @@ import gsap from "gsap";
 
 const Navbar = () => {
   const leftNavRef = useRef(null);
-  const rightNavRef = useRef(null);
+  const topNavRef = useRef(null);
 
   useEffect(() => {
     // 🔴 Intro screen ke 4.5s khatam hone ke baad Navbar ke elements fade-in honge
     gsap.fromTo(
-      [leftNavRef.current, rightNavRef.current],
+      [leftNavRef.current, topNavRef.current],
       { opacity: 0 },
       { opacity: 1, duration: 1, delay: 4.5, ease: "power2.inOut" }
     );
@@ -19,11 +19,7 @@ const Navbar = () => {
     // z-[100] aur pointer-events-none ensures k ye baqi layout ko block na kare
     <nav className="fixed inset-0 pointer-events-none z-[100]">
       
-      {/* 🟢 LOGO COMPONENT (Isme apna 4.5s ka delay already hai) */}
-      <Logo />
-
-      {/* 1️⃣ LEFT EDGE MODULE (SOCIALS) - Exactly screen k left par */}
-      {/* Initial opacity-0 rakhi hai taa ke jab tak GSAP na chalay, ye hidden rahay */}
+      {/* 1️⃣ LEFT EDGE MODULE (SOCIALS) - Exactly as your original code */}
       <div ref={leftNavRef} className="absolute left-5 top-0 bottom-0 flex flex-col items-center justify-center pointer-events-none opacity-0">
         <div className="w-[1px] flex-1 bg-transparent to-[#eb0a1e]/60 mb-2"></div>
         <div className="relative flex flex-col gap-5 items-center w-12 py-5 bg-transparent rounded-full pointer-events-auto shadow-2xl">
@@ -41,7 +37,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Twitter (Old Bird) Icon */}
+          {/* Twitter Icon */}
           <div className="group relative flex items-center justify-start w-8 h-8 cursor-pointer z-10">
             <div className="absolute left-[-8px] top-[-8px] h-12 w-12 bg-transparent rounded-full transition-all duration-500 group-hover:w-[146px] -z-10 shadow-lg"></div>
             <div className="absolute left-0 top-0 w-8 h-8 bg-[#ba1c3c] rounded-full flex items-center overflow-hidden shadow-md transition-all duration-500 group-hover:w-[130px] z-10">
@@ -71,41 +67,55 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* 2️⃣ TOP RIGHT MODULE - Exactly screen k right par */}
-      {/* Initial opacity-0 rakhi hai taa ke Intro Screen ke baad fade in ho */}
-      <div ref={rightNavRef} className="absolute top-6 right-6 flex flex-col items-end gap-3 pointer-events-none opacity-0">
-        <div className="flex pointer-events-auto">
-          <button className="h-12 px-6 rounded-full bg-transparent backdrop-blur-md text-white font-black text-xs tracking-widest hover:text-white transition-all cursor-pointer group relative overflow-hidden">
+      {/* 2️⃣ TOP PILL NAVBAR - Positioned like the image, content exact original */}
+      <div 
+        ref={topNavRef} 
+        className="absolute top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-[1400px] h-16 bg-white/10 backdrop-blur-md rounded-full border border-white/5 flex items-center justify-between px-6 pointer-events-none opacity-0 shadow-2xl"
+      >
+        
+        {/* LEFT: LOGO */}
+        <div className="pointer-events-auto flex items-center ">
+          <Logo />
+        </div>
+
+        {/* CENTER: NAV LINKS (Aapke original buttons with red animations) */}
+        <div className="hidden lg:flex items-center pointer-events-auto">
+          <button className="h-12 px-6 rounded-full text-white font-black text-xs tracking-widest hover:text-white transition-all cursor-pointer group relative overflow-hidden">
             <span className="absolute inset-0 bg-[#ba1c3c] transform origin-top scale-y-0 transition-transform duration-300 ease-out group-hover:scale-y-100 -z-10"></span>
             <span className="relative z-10">HOME</span>
           </button>
-          <button className="h-12 px-6 rounded-full bg-transparent backdrop-blur-md text-white font-black text-xs tracking-widest hover:text-white transition-all cursor-pointer group relative overflow-hidden">
+          <button className="h-12 px-6 rounded-full text-white font-black text-xs tracking-widest hover:text-white transition-all cursor-pointer group relative overflow-hidden">
             <span className="absolute inset-0 bg-[#ba1c3c] transform origin-top scale-y-0 transition-transform duration-300 ease-out group-hover:scale-y-100 -z-10"></span>
             <span className="relative z-10">WHY US</span>
           </button>
-          <button className="h-12 px-6 rounded-full bg-transparent backdrop-blur-md text-white font-black text-xs tracking-widest hover:text-white transition-all cursor-pointer group relative overflow-hidden">
+          <button className="h-12 px-6 rounded-full text-white font-black text-xs tracking-widest hover:text-white transition-all cursor-pointer group relative overflow-hidden">
             <span className="absolute inset-0 bg-[#ba1c3c] transform origin-top scale-y-0 transition-transform duration-300 ease-out group-hover:scale-y-100 -z-10"></span>
             <span className="relative z-10">TEAM</span>
           </button>
-          <button className="h-12 px-6 rounded-full bg-transparent backdrop-blur-md text-white font-black text-xs tracking-widest hover:text-white transition-all cursor-pointer group relative overflow-hidden">
+          <button className="h-12 px-6 rounded-full text-white font-black text-xs tracking-widest hover:text-white transition-all cursor-pointer group relative overflow-hidden">
             <span className="absolute inset-0 bg-[#ba1c3c] transform origin-top scale-y-0 transition-transform duration-300 ease-out group-hover:scale-y-100 -z-10"></span>
             <span className="relative z-10">CONTACT</span>
           </button>
         </div>
-        <button className="group w-full h-12 rounded-full bg-[#ba1c3c] text-white font-black text-xs tracking-[0.2em] transition-all cursor-pointer pointer-events-auto flex items-center justify-center">
-          <span className="flex items-center overflow-hidden leading-none">
-            {"LETS GO".split("").map((char, index) => (
-              <span key={index} className="relative inline-flex h-[1em] overflow-hidden">
-                <span className="inline-block transition-transform duration-300 ease-out will-change-transform group-hover:-translate-y-[100%]" style={{ transitionDelay: `${index * 21}ms` }}>
-                  {char === " " ? "\u00A0" : char}
+
+        {/* RIGHT: LETS GO BUTTON (Aapka original red button with rolling text) */}
+        <div className="pointer-events-auto">
+          <button className="group px-8 h-12 rounded-full bg-[#ba1c3c] text-white font-black text-xs tracking-[0.2em] transition-all cursor-pointer flex items-center justify-center">
+            <span className="flex items-center overflow-hidden leading-none">
+              {"LETS GO".split("").map((char, index) => (
+                <span key={index} className="relative inline-flex h-[1em] overflow-hidden">
+                  <span className="inline-block transition-transform duration-300 ease-out will-change-transform group-hover:-translate-y-[100%]" style={{ transitionDelay: `${index * 21}ms` }}>
+                    {char === " " ? "\u00A0" : char}
+                  </span>
+                  <span className="absolute left-0 top-full inline-block text-black transition-transform duration-300 ease-out will-change-transform group-hover:-translate-y-[100%]" style={{ transitionDelay: `${index * 21}ms` }}>
+                    {char === " " ? "\u00A0" : char}
+                  </span>
                 </span>
-                <span className="absolute left-0 top-full inline-block text-black transition-transform duration-300 ease-out will-change-transform group-hover:-translate-y-[100%]" style={{ transitionDelay: `${index * 21}ms` }}>
-                  {char === " " ? "\u00A0" : char}
-                </span>
-              </span>
-            ))}
-          </span>
-        </button>
+              ))}
+            </span>
+          </button>
+        </div>
+
       </div>
 
     </nav>

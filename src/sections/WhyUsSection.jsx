@@ -103,7 +103,8 @@ const WhyUsSection = () => {
               <div 
                 key={index} 
                 ref={el => cardsRef.current[index] = el} 
-                className="group relative bg-[#0a0a0a] border border-white/5 p-8 md:p-12 hover:border-[#ba1c3c]/50 transition-all duration-500 overflow-hidden shadow-2xl origin-right"
+                // 🔴 Hover effect (group-hover:border) aur extra transition styles hata diye gaye hain
+                className="relative bg-[#0a0a0a] border border-white/5 p-8 md:p-12 overflow-hidden shadow-2xl origin-right"
               >
                 <div className="relative z-10 flex flex-col gap-4">
                   <div className="flex items-center gap-4">
@@ -115,11 +116,13 @@ const WhyUsSection = () => {
                       {item.title.substring(1)}
                     </h3>
                   </div>
-                  <p className="text-white text-sm md:text-sm font-paragraph leading-relaxed max-w-[90%] md:max-w-[85%] transition-colors duration-500">
+                  <p className="text-white text-sm md:text-sm font-paragraph leading-relaxed max-w-[90%] md:max-w-[85%]">
                     {item.text}
                   </p>
                 </div>
-                <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#ba1c3c] scale-y-0 origin-bottom group-hover:scale-y-100 transition-transform duration-500 ease-out"></div>
+                
+                {/* 🔴 Left Red Line: Static (hamesha show hogi) aur animations/scale hata diye gaye hain */}
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#ba1c3c]"></div>
               </div>
             ))}
           </div>
