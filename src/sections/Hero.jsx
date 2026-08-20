@@ -49,7 +49,8 @@ const HeroTemplate = () => {
 
   return (
     <>
-      <section ref={heroRef} className="relative h-screen w-screen overflow-hidden bg-black flex items-center justify-center py-4 lg:py-6">
+      {/* 👇 YAHAN CHANGE KIYA HAI: bg-black ki jagah linear-gradient(to_bottom,#ba1c3c_50%,#000_50%) laga dia */}
+      <section ref={heroRef} className="relative h-screen w-screen overflow-hidden bg-[linear-gradient(to_bottom,#ba1c3c_20%,#000_50%)] flex items-center justify-center py-4 lg:py-6">
         
         {/* 🔴 BACKGROUND 3D VIDEO COMMENTED OUT */}
         {/* 
@@ -103,13 +104,13 @@ const HeroTemplate = () => {
                
 
                {/* Center Image: 100% exact proportional scaling based on screenshot */}
-               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-auto z-10 flex items-center justify-center">
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-auto z-10 flex items-center justify-center">
                    <img 
                       src="/images/D1.png" 
                       alt="Big D" 
                       className="h-[clamp(12rem,17vw,20rem)] w-auto object-contain transition-all duration-300" 
                    />
-               </div>
+               </div> 
 
                {/* Right Side: Absolute Paragraph */}
                <div className="flex items-stretch gap-[clamp(0.5rem,1vw,1.2rem)] pointer-events-auto z-20 w-[clamp(15rem,22vw,26rem)]">

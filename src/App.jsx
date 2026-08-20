@@ -7,6 +7,8 @@ import IntroScreen from './components/IntroScreen';
 import HeroTemplate from './sections/Hero';
 import Navbar from './sections/Navbar';
 import WhyUsSection from './sections/WhyUsSection';
+import CustomSection from './sections/TeamSection';
+
 
 // Plugin register hamesha bahar hota hai
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, ScrollSmoother);
@@ -39,6 +41,7 @@ const App = () => {
         <div id="smooth-content">
           <HeroTemplate />
           <WhyUsSection />
+          <CustomSection/>
         </div>
       </div>
 

@@ -65,3 +65,46 @@ export const principles = [
     text: "Whatever your goals are, our dedicated and experienced team have got it covered. They will pull out all the stops to meet your expectations."
   }
 ];
+
+export const teamData = [
+  {
+    img: "/images/p1.png", // Apni team ki image ka path dain
+    rotation: "rotate-z-[-10deg]",
+    name: "Madison",
+    translation: "translate-y-[-5%] md:left-[20%]",
+  },
+  {
+    img: "/images/p2.png",
+    rotation: "rotate-z-[4deg] md:left-[30%]",
+    name: "Alexander",
+  },
+  {
+    img: "/images/p3.png",
+    rotation: "rotate-z-[-4deg]",
+    name: "Andrew",
+    translation: "translate-y-[-5%] md:left-[40%]",
+  },
+  {
+    img: "/images/p4.png",
+    rotation: "rotate-z-[4deg]",
+    name: "Bryan",
+    translation: "translate-y-[5%] md:left-[50%]",
+  },
+  {
+    img: "/images/p5.png",
+    rotation: "rotate-z-[-10deg] md:left-[60%]",
+    name: "Chris",
+  },
+  {
+    img: "/images/p6.png",
+    rotation: "rotate-z-[4deg]",
+    name: "Devante",
+    translation: "translate-y-[5%] md:left-[70%]",
+  },
+  {
+    img: "/images/p7.png",
+    rotation: "rotate-z-[-3deg] md:left-[80%]",
+    name: "Melisa",
+    translation: "translate-y-[10%]",
+  },
+];
