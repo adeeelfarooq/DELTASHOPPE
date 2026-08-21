@@ -8,6 +8,7 @@ import HeroTemplate from './sections/Hero';
 import Navbar from './sections/Navbar';
 import WhyUsSection from './sections/WhyUsSection';
 import CustomSection from './sections/TeamSection';
+import ContactSection from './sections/ContactSection';
 
 
 // Plugin register hamesha bahar hota hai
@@ -42,6 +43,7 @@ const App = () => {
           <HeroTemplate />
           <WhyUsSection />
           <CustomSection/>
+          <ContactSection/>
         </div>
       </div>
 
