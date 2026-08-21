@@ -67,25 +67,28 @@ export const principles = [
 ];
 
 export const teamData = [
+
+   {
+    img: "/images/imran-rashid-ceo-deltashoppe-1.jpg",
+    rotation: "",
+    name: "Imran Rashid",
+    role: "Founder and CEO",
+    translation: "",
+    bio: "Imran Rashid began his journey with computers during his teenage years and later completed a Master's degree in Software Engineering from Liverpool University. After working as a consultant in the UK, he returned to Pakistan and started his own software venture. With expertise in Oracle and .NET, he has led enterprise and internet-scale application development. Imran believes in quality, continuous learning, and building a strong workplace culture at Deltashoppe.",
+    linkedin: "#",
+  },
+  
   {
     img: "/images/Ali-web.jpg",
     rotation: "",
     name: "Muhammad Ali",
     role: "Operations",
-    translation: "translate-y-[-5%] ",
+    translation: "translate-y-[5%] ",
     bio: "Ali has over 23 years of experience in Administration, HR, Finance, Project Management, and corporate operations. He holds Master's degrees in Commerce and Computer Sciences, along with an MS/M.Phil in Project Management. He has worked with educational institutions, multinational companies, and the telecom sector. Project Management is his passion, and he believes in continuous learning and career excellence.",
     linkedin: "#",
   },
 
-  {
-    img: "/images/haroon-web.jpg",
-    rotation: "",
-    name: "Haroon Ur Rasheed",
-    role: ".NET Developer",
-    translation: "translate-y-[5%] ",
-    bio: "Haroon is a Computer Science graduate with 7 years of experience in application development. He specializes in .NET, WPF, C#, SQL, point-of-sale systems, inventory management, and distributed desktop applications. He is passionate about learning new technologies and building practical solutions. Haroon also enjoys travelling, farming, and agriculture.",
-    linkedin: "#",
-  },
+  
 
   {
     img: "/images/Humayun-web.jpg",
@@ -97,13 +100,13 @@ export const teamData = [
     linkedin: "#",
   },
 
-  {
-    img: "/images/imran-rashid-ceo-deltashoppe-1.jpg",
+ {
+    img: "/images/haroon-web.jpg",
     rotation: "",
-    name: "Imran Rashid",
-    role: "Founder and Chief Executive Officer",
-    translation: "translate-y-[5%]",
-    bio: "Imran Rashid began his journey with computers during his teenage years and later completed a Master's degree in Software Engineering from Liverpool University. After working as a consultant in the UK, he returned to Pakistan and started his own software venture. With expertise in Oracle and .NET, he has led enterprise and internet-scale application development. Imran believes in quality, continuous learning, and building a strong workplace culture at Deltashoppe.",
+    name: "Haroon Ur Rasheed",
+    role: ".NET Developer",
+    translation: "translate-y-[5%] ",
+    bio: "Haroon is a Computer Science graduate with 7 years of experience in application development. He specializes in .NET, WPF, C#, SQL, point-of-sale systems, inventory management, and distributed desktop applications. He is passionate about learning new technologies and building practical solutions. Haroon also enjoys travelling, farming, and agriculture.",
     linkedin: "#",
   },
 
