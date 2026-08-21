@@ -68,43 +68,63 @@ export const principles = [
 
 export const teamData = [
   {
-    img: "/images/p1.png", // Apni team ki image ka path dain
-    rotation: "rotate-z-[-10deg]",
-    name: "Madison",
-    translation: "translate-y-[-5%] md:left-[20%]",
+    img: "/images/Ali-web.jpg",
+    rotation: "",
+    name: "Muhammad Ali",
+    role: "Operations",
+    translation: "translate-y-[-5%] right-[25%]",
+    bio: "Ali has over 23 years of experience in Administration, HR, Finance, Project Management, and corporate operations. He holds Master's degrees in Commerce and Computer Sciences, along with an MS/M.Phil in Project Management. He has worked with educational institutions, multinational companies, and the telecom sector. Project Management is his passion, and he believes in continuous learning and career excellence.",
+    linkedin: "#",
   },
+
   {
-    img: "/images/p2.png",
-    rotation: "rotate-z-[4deg] md:left-[30%]",
-    name: "Alexander",
+    img: "/images/haroon-web.jpg",
+    rotation: "",
+    name: "Haroon Ur Rasheed",
+    role: ".NET Developer",
+    translation: "translate-y-[-5%] right-[10%]",
+    bio: "Haroon is a Computer Science graduate with 7 years of experience in application development. He specializes in .NET, WPF, C#, SQL, point-of-sale systems, inventory management, and distributed desktop applications. He is passionate about learning new technologies and building practical solutions. Haroon also enjoys travelling, farming, and agriculture.",
+    linkedin: "#",
   },
+
   {
-    img: "/images/p3.png",
-    rotation: "rotate-z-[-4deg]",
-    name: "Andrew",
-    translation: "translate-y-[-5%] md:left-[40%]",
+    img: "/images/Humayun-web.jpg",
+    rotation: "",
+    name: "Humayun Shoukat",
+    role: "Director of Engineering",
+    translation: "translate-y-[-5%] right-[5%]",
+    bio: "Humayun has more than 14 years of experience in .NET Full Stack development. His expertise includes .NET Core, Microservices, Angular, CI/CD, DevOps, design patterns, dependency injection, and IoC containers. At Deltashoppe, he focuses on code quality, self-learning, and modern technologies. He is also a family man who enjoys reading, football, cricket, and table tennis.",
+    linkedin: "#",
   },
+
   {
-    img: "/images/p4.png",
-    rotation: "rotate-z-[4deg]",
-    name: "Bryan",
-    translation: "translate-y-[5%] md:left-[50%]",
+    img: "/images/imran-rashid-ceo-deltashoppe-1.jpg",
+    rotation: "",
+    name: "Imran Rashid - CEO",
+    role: "Founder and Chief Executive Officer",
+    translation: "translate-y-[5%]",
+    bio: "Imran Rashid began his journey with computers during his teenage years and later completed a Master's degree in Software Engineering from Liverpool University. After working as a consultant in the UK, he returned to Pakistan and started his own software venture. With expertise in Oracle and .NET, he has led enterprise and internet-scale application development. Imran believes in quality, continuous learning, and building a strong workplace culture at Deltashoppe.",
+    linkedin: "#",
   },
+
   {
-    img: "/images/p5.png",
-    rotation: "rotate-z-[-10deg] md:left-[60%]",
-    name: "Chris",
+    img: "/images/tahir-web.jpg",
+    rotation: "",
+    name: "Tahir Abbas",
+    role: "Team Lead PHP",
+    translation: "",
+    bio: "Tahir is a Software Engineering graduate with 10 years of experience in software development. His expertise includes PHP, Java, C#, Joomla, SugarCRM, WPF, WordPress plugins and themes, and Web APIs. He has also contributed to business processes, change management, and technical training. Tahir is focused on learning new technologies, sharing knowledge, and continuously improving his professional skills.",
+    linkedin: "#",
   },
+
   {
-    img: "/images/p6.png",
-    rotation: "rotate-z-[4deg]",
-    name: "Devante",
-    translation: "translate-y-[5%] md:left-[70%]",
+    img: "/images/zeeshan-haider.jpg",
+    rotation: "",
+    name: "Zeeshan Haider",
+    role: "Chief Operating Officer",
+    translation: "translate-y-[5%]",
+    bio: "Zeeshan is an IT executive with more than 18 years of experience in software development, leadership, and business management. His technology expertise includes PHP, .NET, Ruby on Rails, C, C++, and JavaScript frameworks. He has worked as an Architect at Swipbox and as COO at Askoli, leading teams and managing business operations. Zeeshan values growth, flexibility, learning, and a positive working culture.",
+    linkedin: "#",
   },
-  {
-    img: "/images/p7.png",
-    rotation: "rotate-z-[-3deg] md:left-[80%]",
-    name: "Melisa",
-    translation: "translate-y-[10%]",
-  },
+
 ];

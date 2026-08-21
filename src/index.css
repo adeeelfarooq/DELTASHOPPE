@@ -24,3 +24,13 @@ body::-webkit-scrollbar {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@layer components{
+  .pin-box {
+      @apply flex items-center justify-center w-full ps-52 absolute 2xl:bottom-62 md:bottom-[60vh] bottom-[65vh];
+}
+
+.vd-card {
+        @apply md:w-70 w-70 flex-none md:rounded-[2vw] rounded-3xl -ms-44 overflow-hidden 2xl:relative absolute border-[.5vw] border-[#ffffff];
+      }
+}

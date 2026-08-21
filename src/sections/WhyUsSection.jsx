@@ -56,11 +56,20 @@ const WhyUsSection = () => {
         scrub: true, 
       }
     });
+
+    // 🟢 NAYA LOGIC: Ye section ko top pe rok (pin) dega, aur agla section iske UPAR se aayega
+    ScrollTrigger.create({
+      trigger: sectionRef.current,
+      start: "top top",
+      pin: true,
+      pinSpacing: false, // 👈 Yahi magic trick hai jo overlapping effect banati hai
+    });
+
   }, { scope: sectionRef });
 
   return (
-    // 🟢 relative z-10 lga diya taa k Pinned Hero Section k upar layer ban k aye
-    <section ref={sectionRef} className="relative z-10 w-full min-h-dvh bg-black py-24 lg:py-32 flex items-center overflow-hidden shadow-[0_-20px_50px_rgba(0,0,0,0.9)]">
+    // 🔴 z-index ko z-0 kar diya hai taake agla section iske UPAR aa saky
+    <section ref={sectionRef} className="relative z-0 w-full min-h-dvh bg-black py-24 lg:py-32 flex items-center overflow-hidden shadow-[0_-20px_50px_rgba(0,0,0,0.9)]">
       <PageContainer>
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
           
@@ -103,7 +112,6 @@ const WhyUsSection = () => {
               <div 
                 key={index} 
                 ref={el => cardsRef.current[index] = el} 
-                // 🔴 Hover effect (group-hover:border) aur extra transition styles hata diye gaye hain
                 className="relative bg-[#0a0a0a] border border-white/5 p-8 md:p-12 overflow-hidden shadow-2xl origin-right"
               >
                 <div className="relative z-10 flex flex-col gap-4">
@@ -121,7 +129,6 @@ const WhyUsSection = () => {
                   </p>
                 </div>
                 
-                {/* 🔴 Left Red Line: Static (hamesha show hogi) aur animations/scale hata diye gaye hain */}
                 <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#ba1c3c]"></div>
               </div>
             ))}
